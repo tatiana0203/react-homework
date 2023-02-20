@@ -1,9 +1,11 @@
-import "./App.css";
 import React, { Component } from "react";
+
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 
 import uuid from "react-uuid";
+
+import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -43,18 +45,24 @@ class App extends Component {
     }));
   };
 
+
+
   render() {
     return (
       <div className="App">
         <div className="Contacts">
           <h1>Phone Book</h1>
+
           <ContactList
             contacts={this.state.contacts}
             deleteContact={this.deleteContact}
           />
+        
           <button className="add-button" onClick={this.handleToggleClick}>Add</button>
+
+          {this.state.formVisible ? (<ContactForm addContact={this.addNewContact} isVisible={this.handleToggleClick} />) : null}
+
         </div>
-        {this.state.formVisible ? (<ContactForm addContact={this.addNewContact} isVisible={this.handleToggleClick} />) : null}
       </div>
     );
   }

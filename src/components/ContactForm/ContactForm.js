@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import "./ContactForm.css";
-
 import uuid from "react-uuid";
- 
+
+import "./ContactForm.css";
 
 class ContactForm extends Component {
   constructor() {
@@ -43,6 +42,7 @@ class ContactForm extends Component {
       <div className="modal">
         <form className="form">
           <h3>Add New Contact</h3>
+          
           <input
             type="text"
             className="form-field "
@@ -51,6 +51,7 @@ class ContactForm extends Component {
             onChange={this.handleAllChanges}
             value={this.state.name}
           />
+
           <input
             type="text"
             className="form-field"
@@ -59,6 +60,7 @@ class ContactForm extends Component {
             onChange={this.handleAllChanges}
             value={this.state.surname}
           />
+
           <input
             type="tel"
             className="form-field "
@@ -70,6 +72,7 @@ class ContactForm extends Component {
 
           <button onClick={this.addContact}>Save</button>
           <button onClick={this.props.isVisible}>Cancel</button>
+
         </form>
       </div>
     );
