@@ -13,14 +13,14 @@ class App extends Component {
       contacts: [
         {
           id:uuid(),
-          name:"Somebody",
-          surname:"Somebody",
+          name:"Someone",
+          surname:"Someone",
           phone:"+8884473213"
         },
         {
           id:uuid(),
-          name:"Somebody",
-          surname:"Somebody",
+          name:"Someone",
+          surname:"Someone",
           phone:"+6345543213"
         }
       ],
@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Contacts">
-          <h3>Telephone Book</h3>
+          <h1>Phone Book</h1>
           <ContactList
             contacts={this.state.contacts}
             deleteContact={this.deleteContact}

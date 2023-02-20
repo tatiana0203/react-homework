@@ -12,8 +12,8 @@
 	text-align: left;
 	border: none;
 	padding: 10px 15px;
-	background: #df9eff;
-	font-size: 14px;
+	background: #cf48de;
+	font-size: 20px;
 }
 
 .table thead tr th:first-child {
@@ -26,7 +26,7 @@
 	text-align: left;
 	border: none;
 	padding: 10px 15px;
-	font-size: 14px;
+	font-size: 18px;
 	vertical-align: top;
 }
 .table tbody tr:nth-child(even){
@@ -38,4 +38,15 @@
 .table tbody tr td:last-child {
 	border-radius: 0 8px 8px 0;
 }
+
+.button-delete{
+	cursor: pointer;
+	padding: 5px 5px;
+	border: 0;
+	background: red; 
+	border-radius: 3px;
+	color: #fff;
+	letter-spacing: 1px;
+	font-size: 14px;
+}	
 

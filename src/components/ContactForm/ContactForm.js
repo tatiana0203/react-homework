@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import "./ContactForm.css";
 
 import uuid from "react-uuid";
-import { useFormik } from 'formik';
  
 
 class ContactForm extends Component {
@@ -15,9 +14,6 @@ class ContactForm extends Component {
       surname: "",
       phone: "",
     };
-    this.addContact = this.addContact.bind(this);
-    this.handleAllChanges = this.handleAllChanges.bind(this);
-    this.reset = this.reset.bind(this);
   }
 
   handleAllChanges = (e) => {
@@ -64,7 +60,7 @@ class ContactForm extends Component {
             value={this.state.surname}
           />
           <input
-            type="number"
+            type="tel"
             className="form-field "
             name="phone"
             placeholder="Phone"

@@ -23,7 +23,7 @@ class ContactList extends Component {
                   <td>{contact.surname}</td>
                   <td>{contact.phone}</td>
                   <td>
-                    <button onClick={() => {this.props.deleteContact(contact.id);}}>
+                    <button className="button-delete" onClick={() => {this.props.deleteContact(contact.id);}}>
                       Delete
                     </button>
                   </td>
