@@ -2,6 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
+
 import uuid from "react-uuid";
 
 class App extends Component {
@@ -9,7 +10,20 @@ class App extends Component {
     super();
     this.state = {
       formVisible: false,
-      contacts: [],
+      contacts: [
+        {
+          id:uuid(),
+          name:"Somebody",
+          surname:"Somebody",
+          phone:"+8884473213"
+        },
+        {
+          id:uuid(),
+          name:"Somebody",
+          surname:"Somebody",
+          phone:"+6345543213"
+        }
+      ],
     };
   }
 
@@ -38,7 +52,7 @@ class App extends Component {
             contacts={this.state.contacts}
             deleteContact={this.deleteContact}
           />
-          <button onClick={this.handleToggleClick}>Add</button>
+          <button className="add-button" onClick={this.handleToggleClick}>Add</button>
         </div>
         {this.state.formVisible ? (<ContactForm addContact={this.addNewContact} isVisible={this.handleToggleClick} />) : null}
       </div>

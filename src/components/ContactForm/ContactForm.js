@@ -1,20 +1,24 @@
 import React, { Component } from "react";
+
+import "./ContactForm.css";
+
 import uuid from "react-uuid";
+import { useFormik } from 'formik';
+ 
 
 class ContactForm extends Component {
   constructor() {
     super();
     this.state = {
-      id:uuid(),
+      id: uuid(),
       name: "",
       surname: "",
       phone: "",
     };
     this.addContact = this.addContact.bind(this);
-    this.handleAllChanges=this.handleAllChanges.bind(this);
-    this.reset=this.reset.bind(this)
+    this.handleAllChanges = this.handleAllChanges.bind(this);
+    this.reset = this.reset.bind(this);
   }
-
 
   handleAllChanges = (e) => {
     this.setState({
@@ -24,57 +28,53 @@ class ContactForm extends Component {
 
   addContact = () => {
     this.props.addContact(this.state);
-    console.log(this.state)
-    this.reset()
-    this.props.isVisible()
+    console.log(this.state);
+    this.reset();
+    this.props.isVisible();
   };
 
-
-  
-
-  reset=()=>{
+  reset = () => {
     this.setState({
-      id:uuid(),
-      name:"",
-      surname:"",
-      phone:""
-    })
-  }
-
- 
+      id: uuid(),
+      name: "",
+      surname: "",
+      phone: "",
+    });
+  };
 
   render() {
     return (
-      <div>
-        <div className="NewContact">
-          <form>
-            <input
-              className="name-input"
-              name="name"
-              onChange={this.handleAllChanges}
-              value={this.state.name}
-            />
-            <input
-              className="surname-input"
-              name="surname"
-              onChange={this.handleAllChanges}
-              value={this.state.surname}
-            />
-            <input
-              className="number-input"
-              name="phone"
-              onChange={this.handleAllChanges}
-              value={this.state.phone}
-            />
-          </form>
-          <div>
-            <p>{this.state.name}</p>
-            <p>{this.state.surname}</p>
-            <p>{this.state.phone}</p>
-          </div>
+      <div className="modal">
+        <form className="form">
+          <h3>Add New Contact</h3>
+          <input
+            type="text"
+            className="form-field "
+            name="name"
+            placeholder="Name"
+            onChange={this.handleAllChanges}
+            value={this.state.name}
+          />
+          <input
+            type="text"
+            className="form-field"
+            name="surname"
+            placeholder="Surname"
+            onChange={this.handleAllChanges}
+            value={this.state.surname}
+          />
+          <input
+            type="number"
+            className="form-field "
+            name="phone"
+            placeholder="Phone"
+            onChange={this.handleAllChanges}
+            value={this.state.phone}
+          />
+
           <button onClick={this.addContact}>Save</button>
           <button onClick={this.props.isVisible}>Cancel</button>
-        </div>
+        </form>
       </div>
     );
   }
